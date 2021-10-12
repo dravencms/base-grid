@@ -1,0 +1,26 @@
+{
+  "name": "dravencms/base-grid",
+  "type": "dravencms-package",
+  "description": "DravenCMS Base Grid",
+  "keywords": [
+    "dravencms",
+    "base-grid"
+  ],
+  "license": [
+    "LGPL-3.0"
+  ],
+  "authors": [
+    {
+      "name": "Adam Schubert"
+    }
+  ],
+  "require": {
+    "dravencms/application": "^0.0.1",
+    "ublaboo/datagrid": "^6.9.0"
+  },
+  "autoload": {
+    "psr-0": {
+      "Dravencms\\": "src/"
+    }
+  }
+}

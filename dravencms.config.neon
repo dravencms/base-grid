@@ -1,2 +1,5 @@
 extensions:
     baseGrid: Dravencms\BaseGrid\DI\BaseGridExtension
+
+services:
+    - Dravencms\Components\BaseGrid\BaseGridFactory

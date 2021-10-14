@@ -1,0 +1,2 @@
+extensions:
+    baseGrid: Dravencms\BaseGrid\DI\BaseGridExtension

@@ -23,7 +23,6 @@ class Grid extends DataGrid
      */
     public function addColumnBoolean(string $key, string $name, string $column = null): Column
     {
-        $this->addColumnCheck($key);
         $column = $column ?: $key;
         return $this->addColumn($key, new ColumnBoolean($this, $key, $column, $name));
     }
@@ -39,7 +38,6 @@ class Grid extends DataGrid
      */
     public function addColumnPosition(string $key, string $name, string $upHref = 'up!', string $downHref = 'down!', string $column = null): Column
     {
-        $this->addColumnCheck($key);
         $column = $column ?: $key;
         return $this->addColumn($key, new ColumnPosition($this, $key, $column, $name, $upHref, $downHref));
     }

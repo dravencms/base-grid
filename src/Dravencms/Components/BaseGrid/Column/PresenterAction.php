@@ -23,7 +23,7 @@ class PresenterAction extends Action
      * @return string
      * @throws InvalidLinkException
      */
-    protected function createLink(DataGrid $grid, $href, $params)
+    protected function createLink(DataGrid $grid, string $href, array $params): string
     {
         try {
             $parent = $grid->getParent();

@@ -19,6 +19,7 @@ class BaseGridFactory extends BaseControl
     public function create(IContainer $container = null, $name = null): Grid
     {
         $grid = new Grid($container, $name);
+        $grid->setStrictSessionFilterValues(false);
         $grid->setRememberState(true);
         return $grid;
     }

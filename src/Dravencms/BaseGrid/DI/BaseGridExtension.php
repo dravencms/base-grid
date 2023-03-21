@@ -2,14 +2,20 @@
 
 namespace Dravencms\BaseGrid\DI;
 
+use Contributte\Translation\DI\TranslationProviderInterface;
 use Nette\DI\CompilerExtension;
 
 /**
  * Class BaseGridExtension
  * @package Dravencms\BaseGrid\DI
  */
-class BaseGridExtension extends CompilerExtension
+class BaseGridExtension extends CompilerExtension implements TranslationProviderInterface
 {
+    public function getTranslationResources(): array
+    {
+        return [__DIR__.'/../lang'];
+    }
+
     public function loadConfiguration(): void
     {
         $this->loadModels();

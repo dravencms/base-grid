@@ -3,6 +3,7 @@
 namespace Dravencms\Components\BaseGrid;
 
 use Dravencms\Components\BaseControl\BaseControl;
+use Nette\Localization\Translator;
 use Nette\ComponentModel\IContainer;
 
 /**
@@ -10,6 +11,17 @@ use Nette\ComponentModel\IContainer;
  */
 class BaseGridFactory extends BaseControl
 {
+    /** @var Translator */
+    private $translator;
+
+    /**
+     * BaseForm constructor.
+    * @param FormRenderer|null $renderer
+    */
+    public function __construct(Translator $translator)
+    {
+        $this->translator = $translator;
+    }
 
     /**
      * @param IContainer $container
@@ -19,6 +31,7 @@ class BaseGridFactory extends BaseControl
     public function create(IContainer $container = null, $name = null): Grid
     {
         $grid = new Grid($container, $name);
+        $grid->setTranslator($this->translator);
         $grid->setStrictSessionFilterValues(false);
         $grid->setRememberState(true);
         return $grid;

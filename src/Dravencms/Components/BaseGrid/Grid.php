@@ -8,9 +8,9 @@ namespace Dravencms\Components\BaseGrid;
 use Dravencms\Components\BaseGrid\Column\ColumnBoolean;
 use Dravencms\Components\BaseGrid\Column\ColumnPosition;
 use Dravencms\Components\BaseGrid\Column\PresenterAction;
-use Ublaboo\DataGrid\Column\Action;
-use Ublaboo\DataGrid\Column\Column;
-use Ublaboo\DataGrid\DataGrid;
+use Contributte\Datagrid\Column\Action;
+use Contributte\Datagrid\Column\Column;
+use Contributte\Datagrid\Datagrid as DataGrid;
 
 class Grid extends DataGrid
 {
@@ -19,9 +19,9 @@ class Grid extends DataGrid
      * @param string $name
      * @param string|null $column
      * @return Column
-     * @throws \Ublaboo\DataGrid\Exception\DataGridException
+     * @throws \Contributte\Datagrid\Exception\DatagridException
      */
-    public function addColumnBoolean(string $key, string $name, string $column = null): Column
+    public function addColumnBoolean(string $key, string $name, ?string $column = null): Column
     {
         $column = $column ?: $key;
         return $this->addColumn($key, new ColumnBoolean($this, $key, $column, $name));
@@ -34,9 +34,9 @@ class Grid extends DataGrid
      * @param string $downHref
      * @param string|null $column
      * @return Column
-     * @throws \Ublaboo\DataGrid\Exception\DataGridException
+     * @throws \Contributte\Datagrid\Exception\DatagridException
      */
-    public function addColumnPosition(string $key, string $name, string $upHref = 'up!', string $downHref = 'down!', string $column = null): Column
+    public function addColumnPosition(string $key, string $name, string $upHref = 'up!', string $downHref = 'down!', ?string $column = null): Column
     {
         $column = $column ?: $key;
         return $this->addColumn($key, new ColumnPosition($this, $key, $column, $name, $upHref, $downHref));
@@ -48,9 +48,9 @@ class Grid extends DataGrid
      * @param string|null $href
      * @param array|null $params
      * @return Action
-     * @throws \Ublaboo\DataGrid\Exception\DataGridException
+     * @throws \Contributte\Datagrid\Exception\DatagridException
      */
-    public function addAction(string $key, string $name, string $href = null, array $params = null): Action
+    public function addAction(string $key, string $name, ?string $href = null, ?array $params = null): Action
     {
         $this->addActionCheck($key);
 

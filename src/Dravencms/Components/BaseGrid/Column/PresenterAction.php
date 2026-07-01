@@ -10,9 +10,9 @@ namespace Dravencms\Components\BaseGrid\Column;
 
 
 use Nette\Application\UI\InvalidLinkException;
-use Ublaboo\DataGrid\Column\Action;
-use Ublaboo\DataGrid\DataGrid;
-use Ublaboo\DataGrid\Exception\DataGridHasToBeAttachedToPresenterComponentException;
+use Contributte\Datagrid\Column\Action;
+use Contributte\Datagrid\Datagrid as DataGrid;
+use Contributte\Datagrid\Exception\DatagridHasToBeAttachedToPresenterComponentException;
 
 class PresenterAction extends Action
 {
@@ -29,7 +29,7 @@ class PresenterAction extends Action
             $parent = $grid->getParent();
 
             return $parent->link($href, $params);
-        } catch (DataGridHasToBeAttachedToPresenterComponentException $e) {
+        } catch (DatagridHasToBeAttachedToPresenterComponentException $e) {
             $parent = $grid->getPresenter();
 
         } catch (\InvalidArgumentException $e) {

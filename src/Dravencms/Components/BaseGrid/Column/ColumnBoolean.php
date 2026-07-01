@@ -3,22 +3,22 @@
 namespace Dravencms\Components\BaseGrid\Column;
 
 use Nette\Utils\Html;
-use Ublaboo\DataGrid\Column\Column;
-use Ublaboo\DataGrid\Row;
+use Contributte\Datagrid\Column\Column;
+use Contributte\Datagrid\Row;
 
 class ColumnBoolean extends Column
 {
     /**
      * @var string
      */
-    protected $align = 'center';
+    protected ?string $align = 'center';
 
     /**
      * Format row item value
      * @param  Row   $row
      * @return mixed
      */
-    public function getColumnValue(Row $row)
+    public function getColumnValue(Row $row): mixed
     {
         $value = parent::getColumnValue($row);
 

@@ -16,7 +16,7 @@
   ],
   "require": {
     "dravencms/application": ">=0.0.1",
-    "ublaboo/datagrid": "^6.9.0"
+    "ublaboo/datagrid": "^7.2"
   },
   "autoload": {
     "psr-0": {

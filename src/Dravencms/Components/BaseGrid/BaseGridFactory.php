@@ -28,7 +28,7 @@ class BaseGridFactory extends BaseControl
      * @param $name
      * @return Grid
      */
-    public function create(IContainer $container = null, $name = null): Grid
+    public function create(?IContainer $container = null, $name = null): Grid
     {
         $grid = new Grid($container, $name);
         $grid->setTranslator($this->translator);

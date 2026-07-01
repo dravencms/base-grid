@@ -3,25 +3,25 @@
 namespace Dravencms\Components\BaseGrid\Column;
 
 use Nette\Utils\Html;
-use Ublaboo\DataGrid\Column\Column;
-use Ublaboo\DataGrid\DataGrid;
-use Ublaboo\DataGrid\Exception\DataGridColumnRendererException;
-use Ublaboo\DataGrid\Row;
+use Contributte\Datagrid\Column\Column;
+use Contributte\Datagrid\Datagrid as DataGrid;
+use Contributte\Datagrid\Exception\DatagridColumnRendererException;
+use Contributte\Datagrid\Row;
 
 class ColumnPosition extends Column
 {
     /**
      * @var string
      */
-    protected $align = 'center';
+    protected ?string $align = 'center';
 
     protected $upHref;
 
     protected $downHref;
 
-    protected $column;
+    protected string $column;
 
-    public function __construct(DataGrid $grid, $key, $column, $name, $upHref, $downHref)
+    public function __construct(DataGrid $grid, string $key, string $column, string $name, string $upHref, string $downHref)
     {
         $this->upHref = $upHref;
         $this->downHref = $downHref;
@@ -35,14 +35,14 @@ class ColumnPosition extends Column
      * @param  Row   $row
      * @return mixed
      */
-    public function render(Row $row)
+    public function render(Row $row): mixed
     {
         /**
          * Renderer function may be used
          */
         try {
             return $this->useRenderer($row);
-        } catch (DataGridColumnRendererException $e) {
+        } catch (DatagridColumnRendererException $e) {
             /**
              * Do not use renderer
              */

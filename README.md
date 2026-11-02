@@ -18,6 +18,8 @@ composer require dravencms/base-grid
 
 The package configuration registers `Dravencms\BaseGrid\DI\BaseGridExtension` and its translation resources.
 
+The `contributte_datagrid` catalogs provide Datagrid 7 labels in Czech and English. Legacy `ublaboo_datagrid` catalogs remain available for application templates that still reference those keys. Frontend assets are supplied by the Bootstrap 5 / Tabler version of `dravencms/admin`. Default row and position actions use Bootstrap 5 button styles.
+
 ## Usage
 
 ```php

@@ -16,6 +16,12 @@ use Contributte\Datagrid\Exception\DatagridHasToBeAttachedToPresenterComponentEx
 
 class PresenterAction extends Action
 {
+    public function __construct(DataGrid $grid, string $key, string $href, string $name, array $params)
+    {
+        parent::__construct($grid, $key, $href, $name, $params);
+        $this->setClass('btn btn-sm '.$grid::$btnSecondaryClass);
+    }
+
     /**
      * @param DataGrid $grid
      * @param string $href

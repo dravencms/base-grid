@@ -50,12 +50,12 @@ class ColumnPosition extends Column
 
         $container = Html::el('div', ['class' => 'btn-group']);
 
-        $elDown = Html::el('a', ['class' => 'btn btn-xs']);
+        $elDown = Html::el('a', ['class' => 'btn btn-sm btn-outline-secondary']);
         $elDown->href($this->createLink($this->grid, $this->downHref, $this->getItemParams($row, ['id'])));
         $elDown->setHtml('<i class="fa fa-chevron-down" aria-hidden="true"></i>');
         $container->addHtml($elDown);
 
-        $elUp = Html::el('a', ['class' => 'btn btn-xs']);
+        $elUp = Html::el('a', ['class' => 'btn btn-sm btn-outline-secondary']);
         $elUp->href($this->createLink($this->grid, $this->upHref, $this->getItemParams($row, ['id'])));
         $elUp->setHtml('<i class="fa fa-chevron-up" aria-hidden="true"></i>');
 

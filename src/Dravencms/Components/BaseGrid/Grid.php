@@ -14,6 +14,8 @@ use Contributte\Datagrid\Datagrid as DataGrid;
 
 class Grid extends DataGrid
 {
+    public static string $btnSecondaryClass = 'btn-outline-secondary';
+
     /**
      * @param string $key
      * @param string $name

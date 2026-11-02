@@ -22,7 +22,13 @@ class ColumnBoolean extends Column
     {
         $value = parent::getColumnValue($row);
 
-        $icon = $value ? 'ok' : 'remove';
-        return Html::el('i')->class("glyphicon glyphicon-$icon icon-$icon");
+        $icon = $value ? 'check' : 'xmark';
+        $label = $this->grid->getTranslator()->translate($value ? 'contributte_datagrid.yes' : 'contributte_datagrid.no');
+        return Html::el('i', [
+            'class' => $this->grid::$iconPrefix.$icon,
+            'role' => 'img',
+            'aria-label' => $label,
+            'title' => $label,
+        ]);
     }
 }

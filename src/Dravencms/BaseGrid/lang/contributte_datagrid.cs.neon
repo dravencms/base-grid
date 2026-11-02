@@ -1,3 +1,5 @@
+yes: 'Ano'
+no: 'Ne'
 group_actions: 'Skupinové akce'
 choose: 'Vybrat'
 choose_input_required: 'Zadejte hodnotu pro skupinovou akci.'

@@ -40,3 +40,7 @@ Datagrid 7 classes use the `Contributte\Datagrid` namespace. For delete confirma
 ## License
 
 This package is licensed under the LGPL-3.0 license.
+
+## Protected grid writes
+
+Grid forms include Nette CSRF protection. Inherited inline-edit, status-change and action-callback signals require POST, a valid admin action token, and the permission set by `setWritePermission(resource, operation)`. Unknown write permissions fail closed. A component's delete callback must also check its delete permission because bulk callbacks call handlers directly.

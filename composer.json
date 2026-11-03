@@ -15,7 +15,7 @@
     }
   ],
   "require": {
-    "dravencms/application": ">=0.0.1",
+    "dravencms/application": "^0.3",
     "ublaboo/datagrid": "^7.2"
   },
   "autoload": {
@@ -27,5 +27,8 @@
     "dravencms": {
       "configuration": "dravencms.config.neon"
     }
+  },
+  "conflict": {
+    "dravencms/admin": "<3.2"
   }
 }

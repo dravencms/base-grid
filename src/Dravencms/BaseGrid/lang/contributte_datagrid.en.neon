@@ -27,3 +27,5 @@ multiselect_choose: 'Choose'
 multiselect_selected: '{0} selected'
 filter_submit_button: 'Filter'
 show_filter: 'Show filter'
+
+session_expired: 'The form has expired. Reload the page and try again.'

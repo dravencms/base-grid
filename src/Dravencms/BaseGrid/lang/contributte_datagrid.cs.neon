@@ -27,3 +27,5 @@ multiselect_choose: 'Vybrat'
 multiselect_selected: '{0} vybráno'
 filter_submit_button: 'Filtrovat'
 show_filter: 'Zobrazit filtr'
+
+session_expired: 'Platnost formuláře vypršela. Obnovte stránku a zkuste to znovu.'

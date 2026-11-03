@@ -16,6 +16,31 @@ class Grid extends DataGrid
 {
     public static string $btnSecondaryClass = 'btn-outline-secondary';
 
+    private ?array $writePermission = null;
+
+    public function setWritePermission(string $resource, string $operation): void
+    {
+        $this->writePermission = [$resource, $operation];
+    }
+
+    public function checkRequirements(\ReflectionClass|\ReflectionMethod $element): void
+    {
+        parent::checkRequirements($element);
+        if ($element instanceof \ReflectionMethod && in_array($element->getName(), ['handleEdit', 'handleChangeStatus', 'handleActionCallback'], true)) {
+            \Dravencms\Security\MutationGuard::check($this->getPresenter());
+            $user = $this->getPresenter()->getUser();
+            if ($this->writePermission === null || !$user->isAllowed(...$this->writePermission)) { $this->error('Forbidden.', 403); }
+        }
+    }
+
+    public function createComponentFilter(): \Nette\Application\UI\Form
+    {
+        $form = parent::createComponentFilter();
+        $form->addProtection('contributte_datagrid.session_expired');
+        return $form;
+    }
+
+
     /**
      * @param string $key
      * @param string $name
